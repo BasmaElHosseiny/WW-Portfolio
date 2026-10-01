@@ -8536,4 +8536,103 @@ a,
   }
 }
 
+.discipline.yellow {
+  background: rgba(241, 212, 79, 0.02);
+}
+
+.discipline.blue {
+  background: rgba(78, 135, 198, 0.02);
+}
+
+.discipline.red {
+  background: rgba(217, 75, 71, 0.02);
+}
+
+.discipline.green {
+  background: rgba(74, 168, 111, 0.02);
+}
+
+/* ========================================
+   STICKY HEADER
+   ======================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  position: fixed;
+}
+
+/* ========================================
+   CENTER INTERACTIVE HINT
+   ======================================== */
+
+.interactive-hint {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  transform: translate(-50%, -50%);
+
+  color: var(--ink-soft, #777);
+
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  opacity: 0.65;
+
+  pointer-events: none;
+}
+
+/* Dot */
+
+.interactive-hint-dot {
+  width: 5px;
+  height: 5px;
+
+  flex: 0 0 5px;
+
+  border-radius: 50%;
+
+  background: #d8b84c;
+
+  box-shadow:
+    0 0 0 3px rgba(216, 184, 76, 0.12);
+
+  animation: interactiveDotPulse 2s ease-in-out infinite;
+}
+
+/* Subtle dot animation */
+
+@keyframes interactiveDotPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(216, 184, 76, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 5px rgba(216, 184, 76, 0.05);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .interactive-hint {
+    display: none;
+  }
+}
 
