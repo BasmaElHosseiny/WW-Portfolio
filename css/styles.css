@@ -8553,98 +8553,60 @@ a,
 }
 
 /* =========================================
-   INTERACTIVE HINT — DESKTOP + MOBILE
+   INTERACTIVE HINT — MOBILE FIX
    ========================================= */
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-}
+@media screen and (max-width: 800px) {
 
-.interactive-hint {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  width: max-content;
-
-  transform: translate(-50%, -50%);
-
-  color: var(--ink-soft, #777);
-
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 1px;
-
-  white-space: nowrap;
-
-  opacity: 0.7;
-
-  visibility: visible !important;
-  pointer-events: none;
-}
-
-.interactive-hint-dot {
-  display: block !important;
-
-  width: 5px;
-  height: 5px;
-
-  min-width: 5px;
-
-  border-radius: 50%;
-
-  background: #d8b84c;
-
-  box-shadow:
-    0 0 0 3px rgba(216, 184, 76, 0.12);
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 800px) {
-
-  .interactive-hint {
-    position: absolute !important;
-
+  .header .interactive-hint {
     display: flex !important;
+    visibility: visible !important;
+    opacity: 0.7 !important;
 
+    position: fixed !important;
+
+    top: 25px !important;
     left: 50% !important;
-    right: auto !important;
 
-    top: 50% !important;
+    right: auto !important;
     bottom: auto !important;
 
     width: max-content !important;
+    height: auto !important;
 
-    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 999999 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+
+    color: var(--ink-soft, #777) !important;
 
     font-size: 7px !important;
+    line-height: 1 !important;
     letter-spacing: 0.7px !important;
 
-    opacity: 0.65 !important;
+    white-space: nowrap !important;
 
-    visibility: visible !important;
+    pointer-events: none !important;
   }
 
-  .interactive-hint-dot {
+  .header .interactive-hint-dot {
     display: block !important;
+    visibility: visible !important;
 
     width: 4px !important;
     height: 4px !important;
     min-width: 4px !important;
+    min-height: 4px !important;
+
+    border-radius: 50% !important;
+
+    background: #d8b84c !important;
   }
 }
