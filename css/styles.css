@@ -8552,23 +8552,18 @@ a,
   background: rgba(74, 168, 111, 0.02);
 }
 
-/* ========================================
-   STICKY HEADER
-   ======================================== */
+/* =========================================
+   INTERACTIVE HINT — DESKTOP + MOBILE
+   ========================================= */
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
-
-  position: fixed;
 }
-
-/* ========================================
-   CENTER INTERACTIVE HINT
-   ======================================== */
 
 .interactive-hint {
   position: absolute;
@@ -8576,9 +8571,12 @@ a,
   left: 50%;
   top: 50%;
 
-  display: inline-flex;
+  display: flex !important;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+
+  width: max-content;
 
   transform: translate(-50%, -50%);
 
@@ -8590,18 +8588,19 @@ a,
 
   white-space: nowrap;
 
-  opacity: 0.65;
+  opacity: 0.7;
 
+  visibility: visible !important;
   pointer-events: none;
 }
 
-/* Dot */
-
 .interactive-hint-dot {
+  display: block !important;
+
   width: 5px;
   height: 5px;
 
-  flex: 0 0 5px;
+  min-width: 5px;
 
   border-radius: 50%;
 
@@ -8609,55 +8608,43 @@ a,
 
   box-shadow:
     0 0 0 3px rgba(216, 184, 76, 0.12);
-
-  animation: interactiveDotPulse 2s ease-in-out infinite;
 }
 
-/* Subtle dot animation */
 
-@keyframes interactiveDotPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 3px rgba(216, 184, 76, 0.12);
-  }
-
-  50% {
-    box-shadow:
-      0 0 0 5px rgba(216, 184, 76, 0.05);
-  }
-}
-
-/* ========================================
+/* =========================================
    MOBILE
-   ======================================== */
+   ========================================= */
 
 @media (max-width: 800px) {
 
   .interactive-hint {
-    display: inline-flex;
+    position: absolute !important;
 
-    left: 50%;
-    top: 50%;
+    display: flex !important;
 
-    gap: 5px;
+    left: 50% !important;
+    right: auto !important;
 
-    font-size: 6.5px;
-    letter-spacing: 0.7px;
+    top: 50% !important;
+    bottom: auto !important;
 
-    white-space: nowrap;
+    width: max-content !important;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
+
+    font-size: 7px !important;
+    letter-spacing: 0.7px !important;
+
+    opacity: 0.65 !important;
+
+    visibility: visible !important;
   }
 
   .interactive-hint-dot {
-    width: 4px;
-    height: 4px;
+    display: block !important;
 
-    flex: 0 0 4px;
-
-    box-shadow:
-      0 0 0 2px rgba(216, 184, 76, 0.12);
+    width: 4px !important;
+    height: 4px !important;
+    min-width: 4px !important;
   }
 }
-
