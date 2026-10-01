@@ -8628,11 +8628,36 @@ a,
   }
 }
 
-/* Mobile */
+/* ========================================
+   MOBILE
+   ======================================== */
 
 @media (max-width: 800px) {
+
   .interactive-hint {
-    display: none;
+    display: inline-flex;
+
+    left: 50%;
+    top: 50%;
+
+    gap: 5px;
+
+    font-size: 6.5px;
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .interactive-hint-dot {
+    width: 4px;
+    height: 4px;
+
+    flex: 0 0 4px;
+
+    box-shadow:
+      0 0 0 2px rgba(216, 184, 76, 0.12);
   }
 }
 
